@@ -2,7 +2,7 @@
 
 version: 2
 jobs:
-  build:
+  build1:
     docker:
       # specify the version you desire here
       - image: circleci/ruby:2.4.1-node-browsers
@@ -10,4 +10,19 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello World"
+  build2:
+    docker:
+      # specify the version you desire here
+      - image: circleci/ruby:2.4.1-node-browsers
 
+    steps:
+      - checkout
+      - run: echo "Hello Again!"
+
+  workflow:
+    version: 2
+    1_and_2:
+      jobs:
+       - build1
+       - build2
+       
