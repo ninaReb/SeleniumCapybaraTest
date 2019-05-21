@@ -2,7 +2,7 @@
 dependencies:
   pre:
    - gem install bundler -v 1.14.5
-   
+
 version: 2
 jobs:
   build1:
@@ -11,7 +11,15 @@ jobs:
       - image: circleci/ruby:2.4.1-node-browsers
 
     steps:
-      - checkout
+      - checkout        
+      - restore_cache:
+          key: CapybaraCITest-{{ checksum "Gemfile.lock" }}
+
+      - save_cache:
+          key: CapybaraCITest-{{ checksum "Gemfile.lock" }}
+          paths:
+           - vendor/bundle
+           
       - run: bundle install
       # - run: gem install cucumber
       # - run: gem install capybara
