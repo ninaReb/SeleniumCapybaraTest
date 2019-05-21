@@ -13,13 +13,13 @@ jobs:
     steps:
       - checkout        
       - restore_cache:
-          key: CapybaraCITest-{{ checksum "Gemfile.lock" }}
+          key: capy-{{ checksum "Gemfile.lock" }}
 
       - save_cache:
-          key: CapybaraCITest-{{ checksum "Gemfile.lock" }}
+          key: capy-{{ checksum "Gemfile.lock" }}
           paths:
            - vendor/bundle
-           
+
       - run: bundle install
       # - run: gem install cucumber
       # - run: gem install capybara
