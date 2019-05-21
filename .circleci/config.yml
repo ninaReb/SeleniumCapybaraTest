@@ -21,7 +21,7 @@ jobs:
 
   workflows:
     version: 2
-    1_and_2:
+    build1_and_build2:
       jobs:
        - build1
        - build2
