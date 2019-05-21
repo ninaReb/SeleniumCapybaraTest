@@ -1,5 +1,8 @@
 # Ruby CircleCI 2.0 configuration file
-
+dependencies:
+  pre:
+   - gem install bundler -v 1.14.5
+   
 version: 2
 jobs:
   build1:
