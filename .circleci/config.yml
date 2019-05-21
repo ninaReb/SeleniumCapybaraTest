@@ -19,10 +19,10 @@ jobs:
       - checkout
       - run: echo "Hello Again!"
 
-  # workflows:
-  #   version: 2
-  #   build1_and_build2:
-  #     jobs:
-  #      - build1
-  #      - build2
+workflows:
+  version: 2
+  build1_and_build2:
+    jobs:
+     - build1
+     - build2
        
