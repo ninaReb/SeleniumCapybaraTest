@@ -9,7 +9,15 @@ jobs:
 
     steps:
       - checkout
-      - run: echo "Hello World"
+      - run:
+        - gem install cucumber
+        - gem install capybara
+        - gem install capybara-webkit
+        - gem install selenium-webdriver
+        - gem install rails
+        - gem install rspec
+        - echo: "gems installed!"
+
   build2:
     docker:
       # specify the version you desire here
