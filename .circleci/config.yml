@@ -12,15 +12,15 @@ jobs:
 
     steps:
       - checkout        
-      - restore_cache:
-          key: capy-{{ checksum "Gemfile.lock" }}
+      # - restore_cache:
+      #     key: capy-{{ checksum "Gemfile.lock" }}
 
-      - save_cache:
-          key: capy-{{ checksum "Gemfile.lock" }}
-          paths:
-           - vendor/bundle
+      # - save_cache:
+      #     key: capy-{{ checksum "Gemfile.lock" }}
+      #     paths:
+      #      - vendor/bundle
 
-      - run: bundle install
+      # - run: bundle install
       # - run: gem install cucumber
       # - run: gem install capybara
       # - run: gem install capybara-webkit
@@ -28,7 +28,7 @@ jobs:
       # - run: gem install rails
       # - run: gem install rspec
       # - run:
-      #   - echo: "gems installed!"
+        - echo: "gems installed!"
 
 
   build2:
@@ -38,7 +38,7 @@ jobs:
 
     steps:
       - checkout
-      - run: echo "Hello Again!"
+      - run: echo "Second Build Passed!"
 
 workflows:
   version: 2
