@@ -11,13 +11,13 @@ jobs:
     steps:
 
       - checkout
-      # - run: bundle install
-      - run:
-          command: ls /capy/spec
+      - run: bundle install
+      # - run:
+      #     command: ls /capy/spec
       - restore_cache:
-          key: capy-{{checksum "Gemfile"}}
+          key: bundler-{{checksum "Gemfile.lock"}}
       - save_cache:
-          key: capy-rspec-{{checksum "Gemfile"}}
+          key: bundler-{{checksum "Gemfile.lock"}}
           paths:
             - vendor/bundle
 
