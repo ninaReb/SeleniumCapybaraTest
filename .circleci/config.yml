@@ -13,22 +13,22 @@ jobs:
     steps:
       - checkout
   
-       - restore_cache:
-           key: capy-{{ checksum "Gemfile" }}
+      - restore_cache:
+          key: capy-{{ checksum "Gemfile" }}
 
-       - save_cache:
-           key: capy-{{ checksum "Gemfile" }}
-           paths:
+      - save_cache:
+          key: capy-{{ checksum "Gemfile" }}
+          paths:
             - vendor/bundle
 
-       - run: bundle install
+      - run: bundle install
       # - run: gem install cucumber
       # - run: gem install capybara
       # - run: gem install capybara-webkit
       # - run: gem install selenium-webdriver
       # - run: gem install rails
       # - run: gem install rspec
-      - run: echo "Build Passed!"  
+      - run: echo "test123"  
 
 
 
