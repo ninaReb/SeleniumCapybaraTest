@@ -9,9 +9,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1-node-browsers
     steps:
-
       - checkout
-      - run:
         - restore_cache:
             key: bundler-{{checksum "Gemfile.lock"}}
         - save_cache:
