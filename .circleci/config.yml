@@ -10,12 +10,13 @@ jobs:
       # specify the version you desire here
       - image: circleci/ruby:2.4.1-node-browsers
     steps:
+
       - checkout
       - run: bundle install
-      - restore_cache:
-          key: capy-{{ checksum "Gemfile" }}
+      # - restore_cache:
+      #     key: capy-{{checksum "Gemfile"}}
       - save_cache:
-          key: capy-{{ checksum "Gemfile" }}
+          key: capy-{{checksum "Gemfile"}}
           paths:
             - vendor/bundle
 
