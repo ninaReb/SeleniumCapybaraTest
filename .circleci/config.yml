@@ -41,10 +41,13 @@ jobs:
 
     steps:
       - checkout
+      - run: mkdir -p ~/cucumber
       - run:
-          name: Start Cucumber
-          command: cucumber
-          
+          name: Run Cukes without Failing
+          command: |
+            TESTFILES=$(circleci tests glob "features/**/*.feature" | circleci tests split --split-by=timings)
+            DONT_FAIL=true bundle exec cucumber --tags 'not @wip' --format rerun --out rerun.txt --format pretty --format json --out ~/cucumber/tests.cucumber ${TESTFILES}
+
       - run: echo "Second Build Passed!"
 
 workflows:
