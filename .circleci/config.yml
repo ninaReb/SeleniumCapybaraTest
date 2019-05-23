@@ -7,7 +7,7 @@ version: 2
 jobs:
   build1:
     docker:
-      - image: circleci/ruby:2.6.0-node
+      - image: circleci/ruby:2.6.0-node-browsers
         environment:
           BUNDLER_VERSION: 2.0.1
 
@@ -20,9 +20,10 @@ jobs:
           paths:
             - vendor/bundle
 
-      - run: gem install bundler:2.0.1
-      #- run: bundle update --bundler
-      - run: bundle install
+       - run: gem install bundler:2.0.1
+       - run: bundle update --bundler
+
+      # - run: bundle install
       # - run: gem install cucumber
       # - run: gem install capybara
       # - run: gem install capybara-webkit
@@ -36,10 +37,11 @@ jobs:
   build2:
     docker:
       # specify the version you desire here
-      - image: circleci/ruby:2.4.1-node-browsers
+      - image: circleci/ruby:2.6.0-node-browsers
 
     steps:
       - checkout
+      - run: Start Selenium
       - run: echo "Second Build Passed!"
 
 workflows:
