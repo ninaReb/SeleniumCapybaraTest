@@ -41,6 +41,8 @@ jobs:
 
     steps:
       - checkout
+      - run: gem install bundler:2.0.1
+      - run: bundle update --bundler
       - run: mkdir -p ~/cucumber
       - run:
           name: Run Cukes without Failing
