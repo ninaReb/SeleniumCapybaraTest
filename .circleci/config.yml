@@ -10,6 +10,7 @@ jobs:
       - image: circleci/ruby:2.6.0-node-browsers
         environment:
           BUNDLER_VERSION: 2.0.1
+        path: ~/capy   
 
     steps:
       - checkout
@@ -24,7 +25,6 @@ jobs:
       - run: bundle update --bundler
       - run: cucumber --init
       - run: bundle exec cucumber
-          path: ~/capy 
 
       # - run: bundle install
       # - run: gem install cucumber
