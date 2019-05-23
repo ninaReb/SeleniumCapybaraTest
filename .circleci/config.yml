@@ -41,8 +41,10 @@ jobs:
 
     steps:
       - checkout
-      - run: mkdir -p $CIRCLE_TEST_REPORTS/cucumber
-      - run: bundle exec cucumber --format junit --out $CIRCLE_TEST_REPORTS/cucumber/junit.xml
+      - run:
+          name: Start Cucumber
+          command: cucumber
+          
       - run: echo "Second Build Passed!"
 
 workflows:
