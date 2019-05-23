@@ -46,13 +46,6 @@ jobs:
       - checkout
       - run: gem install bundler:2.0.1
       - run: bundle update --bundler
-      - run: mkdir -p ~/cucumber
-      - run:
-          name: Run Cukes without Failing
-          command: |
-            TESTFILES=$(circleci tests glob "features/**/*.feature" | circleci tests split --split-by=timings)
-            DONT_FAIL=true bundle exec cucumber --tags 'not @wip' --format rerun --out rerun.txt --format pretty --format json --out ~/cucumber/tests.cucumber ${TESTFILES}
-
       - run: echo "Second Build Passed!"
 
 workflows:
