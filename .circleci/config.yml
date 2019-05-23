@@ -5,7 +5,7 @@ dependencies:
 
 version: 2
 jobs:
-  build1:
+  Bundle_updates:
     docker:
       - image: circleci/ruby:2.6.0-node-browsers
         environment:
@@ -20,7 +20,7 @@ jobs:
           paths:
             - vendor/bundle
 
-      - run: gem install bundler:2.0.1
+      #- run: gem install bundler:2.0.1
       - run: bundle update --bundler
 
       # - run: bundle install
@@ -34,22 +34,26 @@ jobs:
 
 
 
-  build2:
+  Capy_Tests:
     docker:
       # specify the version you desire here
       - image: circleci/ruby:2.6.0-node-browsers
 
     steps:
       - checkout
-      - run: Start Selenium
+      - run:
+          name: Start Selenium
+          command: - bundle exec cucumber
+          background: true
+
       - run: echo "Second Build Passed!"
 
 workflows:
   version: 2
   build1_and_build2:
     jobs:
-     - build1
-     - build2:
+     - Bundle_updates
+     - Capy_Tests:
         requires:  
-           - build1
+           - Bundle_updates
        
