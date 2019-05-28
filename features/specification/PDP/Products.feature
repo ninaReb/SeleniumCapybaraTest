@@ -1,10 +1,8 @@
-#Language: en
+Feature: Products
 
-Feature: Test
-
-   Feature description Test
+   Feature description Products
    
-   @temp
+ @temp
    Scenario: Searching for a product on Ferguson site
         Given I am on the Ferguson desktop site
         When I type ccc on the search field

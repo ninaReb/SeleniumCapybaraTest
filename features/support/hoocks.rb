@@ -4,9 +4,9 @@ Before do
         visit "https://ferguson.com"
       end
 
-    @Logon_page = Login.new
-    @header_page = Header.new
-    @pdp_page = PDP.new
-    @MyList_page = MyList.new 
+    @login_page = LoginPage.new
+    @header_page = HeaderPage.new
+    @pdp_page = PdpPage.new
+    @mylist_page = MyListPage.new 
    
 end
