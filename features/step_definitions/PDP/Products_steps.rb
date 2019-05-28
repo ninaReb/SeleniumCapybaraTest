@@ -1,4 +1,6 @@
 
+# require 'webdrivers/chromedriver'
+
 Given("I am on the Ferguson desktop site") do
   visit "https://ferguson.com"
   @login_page.Logon('test_123@mailinator.com', 'Admin123')

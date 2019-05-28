@@ -6,4 +6,5 @@ group :test do
     gem 'rspec'
     gem 'cucumber'
     gem 'rspec_junit_formatter'
+    gem 'webdrivers'
 end
