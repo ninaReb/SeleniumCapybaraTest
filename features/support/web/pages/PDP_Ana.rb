@@ -90,6 +90,10 @@ class PdpAnaPage
     image = find(:xpath, '/html/body/div[6]')
     image.hover
   end
+ 
+  def getModalHoverImage #verificar qual é o elemento certo da modal que aparece no hover do mouse
+    find(:xpath, '//*[@id="destination_publishing_iframe_ferguson_0"]')
+  end
 
   def click_ColorFinish_PChrome
     find('img[title="Polished Chrome"]').click

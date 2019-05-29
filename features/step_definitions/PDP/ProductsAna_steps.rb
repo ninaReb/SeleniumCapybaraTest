@@ -153,6 +153,6 @@ When("I hover over on the product image") do
 end
 
 Then("I should see the product part zoom in a new window") do
-  
+  expext(page).to have_content(@pdpAna_page.getModalHoverImage)
 end
 
