@@ -8,5 +8,6 @@ Before do
     @header_page = HeaderPage.new
     @pdp_page = PdpPage.new
     @mylist_page = MyListPage.new 
+    @pdpnina_page = PdpPageNina.new
    
 end
