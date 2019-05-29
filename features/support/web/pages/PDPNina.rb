@@ -70,8 +70,6 @@ class PdpPageNina
   def clickPrint
     Print.click
   end
-<<<<<<< HEAD
-=======
 
   def hoverZoomImage
     Zoom_Image_Container.hover
@@ -106,7 +104,6 @@ class PdpPageNina
   end
 
 
->>>>>>> master
 end
 
   
