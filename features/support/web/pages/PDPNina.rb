@@ -46,8 +46,6 @@ class PdpPageNina
   def clickPrint
     Print.click
   end
-
-
 end
 
   
