@@ -42,14 +42,13 @@ class PdpAnaPage
     @Add_To_Cart_Button = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[4]/input[9]')
     @Print = find('#js-down-pdf')
     @Add_To_Lists_Button = find('#singleForm > div.total-content > div.total-button > input.button.tertiary.form-control.js-pls-select-sku')
-    @Add_To_Cart_Button = find('#singleForm > div.total-content > div.total-button > input.button.primary.form-control.js-pls-select-sku')
     @Expand_Specifications_Arrow = find('#wrapper > main > div > div.row > div.col-lg-8.col-md-8 > p > a')
     @Second_Image_Thumbnail = find('#js-thumb-img > a:nth-child(2) > img')
     @First_Image_Thumbnail = find('#js-thumb-img > a.active > img')
     @First_Color = find('#js-pls-select-container > a:nth-child(1) > img')
     @Second_Color = find('#js-pls-select-container > a:nth-child(2) > img')
     # By Ana
-    @Pricing_Btn = find(:xpath, '//*[@id="singleForm"]/div[2]/div[1]/div[4]/div/span/div')
+    @Pricing_Btn = find(:xpath, '//*[@id="singleForm"]/div[2]/div[1]/div[4]/div/span/div/div[2]')
   end
 
   # Checkboxes
@@ -76,23 +75,13 @@ class PdpAnaPage
     @Quantity = find(:xpath, '//*[@id="singleForm"]/div[2]/div[2]/ul/li[2]/fieldset/dl/dd/input[1]')
   end
 
-
-  # ----------------------
+  # ---------------------- CLICK METHODS-----------------------------------------------
   def clickCheck_Others_Info_Link
     @Check_Others_Info.click
   end
 
   def clickSee_Whats_Available_Link
     @See_Whats_Available.click
-  end
-
-  def hoverMouse_Image
-    image = find(:xpath, '/html/body/div[6]')
-    image.hover
-  end
- 
-  def getModalHoverImage #verificar qual é o elemento certo da modal que aparece no hover do mouse
-    find(:xpath, '//*[@id="destination_publishing_iframe_ferguson_0"]')
   end
 
   def click_ColorFinish_PChrome
@@ -163,23 +152,26 @@ class PdpAnaPage
     @Entire_Collection_Left_Arrow.click
   end
 
-  # By Ana - get components
-  def clickPricingDropDown
-    @Pricing_Btn.click
+  # --------------------SELECT AND HOVER METHODS------------------------------------------------
+  def selectNoPricingOpt
+    select(@NoPricingOpt, from: @Pricing_Btn)
+   # drop = find(@Pricing_Btn)
+   # drop.find('option', text: 'No Pricing').select_option
+ end
+
+  def hoverMouse_Image
+    image = find(:xpath, '/html/body/div[6]')
+    image.hover
   end
 
-  def clickNoPricingOpt
-    @NoPricingOpt.click
-  end
-
-  #GET
+  #--------------------GET METHODS--------------------------------------------------------------------
   def getCheckAvailabilityModal
     find(:xpath, '//*[@id="checkStores"]/div/div')
   end
 
-   def getDescription
+  def getDescription
     @Description
-  end
+ end
 
   def getProduct_Code
     @Product_Code
@@ -233,6 +225,10 @@ class PdpAnaPage
     @Print
   end
 
+  def getModalHoverImage # verificar qual é o elemento certo da modal que aparece no hover do mouse
+    find(:xpath, '//*[@id="destination_publishing_iframe_ferguson_0"]')
+  end
+
   def getProduct_Path
     @Product_Path
   end
@@ -278,10 +274,14 @@ class PdpAnaPage
   end
 
   def getCartAmount
-   find(:xpath, '//*[@id="wrapper"]/header/div[4]/div[3]/ul/li[2]/a/span/span[2]')
+    find(:xpath, '//*[@id="wrapper"]/header/div[4]/div[3]/ul/li[2]/a/span/span[2]')
   end
 
   def getAddMyListModal
-   find(:xpath, '//*[@id="wishListModal"]/div/div')
+    find(:xpath, '//*[@id="wishListModal"]/div/div')
+  end
+
+  def getSpecification_ColorFinish
+    find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[1]/div/div[2]/div[2]/div/dl[12]/dd/div')
   end
 end

@@ -32,6 +32,7 @@ Feature: Products
         Then I should see the In Store Availability information
         Then I should see the Frequently Purchased Together section
         Then I should see the Entire Collection section
+        Then I should see product price options
         
 #click functions
         When I hover over on the product image
@@ -39,10 +40,7 @@ Feature: Products
 
         When I click on the product images options
         Then I should see the selected color characteristcs
-
-        When I click on product price drop-down
-        Then I should see product price options
-
+     
         When I click on the No Pricing option
         Then I should see the content "Call us for price" on the price place
 
