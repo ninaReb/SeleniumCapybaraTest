@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Given("I am on logged the ferguson login page") do
-    @login_page.Logon('test_123@mailinator.com', 'Admin123')  
-  end
+    @login_page.Logon('test_123@mailinator.com', 'Admin123')
+end
   
   When("I click to logout") do
     @login_page.Logout 

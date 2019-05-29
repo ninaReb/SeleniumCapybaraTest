@@ -1,4 +1,4 @@
-
+=begin
 
 Given("I am on the Ferguson desktop site") do
   visit "https://ferguson.com"
@@ -8,7 +8,7 @@ end
 When("I type ccc on the search field") do  
   @header_page.FindSearch("CCC")
 end
-  
+
 When("I click on Enter button") do
   @header_page.ClickFind_Button
 end
@@ -39,4 +39,4 @@ Then("I should see the product part zoom in a new window") do
   expect(page).to have_selector('.zoomLens')
   expect(page).to have_selector ('.zoomWindow')
 end
-
+=end

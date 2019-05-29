@@ -2,7 +2,7 @@ Feature: Products
 
    Feature description Products
    
- @temp
+
    Scenario: Searching for a product on Ferguson site
         Given I am on the Ferguson desktop site
         When I type A7430801 on the search field

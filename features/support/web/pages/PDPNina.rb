@@ -16,7 +16,7 @@ class PdpPageNina
     $Color_finish = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[1]/div/div[2]/div[1]/div')
     $Zoom_Image_Container = find(:xpath, '/html/body/div[6]')
     $Product_Images = find(:xpath, '//*[@id="js-thumb-img"]')
-    $Product_Code = find('#wrapper > main > div > div.row > div.col-lg-8.col-md-8 > div > div:nth-child(2) > div.product-info > p.pro-id')
+    $Product_Code = find(:xpath, '#wrapper > main > div > div.row > div.col-lg-8.col-md-8 > div > div:nth-child(2) > div.product-info > p.pro-id')
   end
 
 
@@ -52,7 +52,7 @@ class PdpPageNina
   $Type_or_Size_Select = find('#js-pls-select-container > span > div > div.sim-head > span.current')
   end
 
-  # ----------------------
+ # ----------------------
 
   #Actions
   def clickAddToCartButton
@@ -102,10 +102,4 @@ class PdpPageNina
   def clickEntireCollectionLeftArrow
     Entire_Collection_Left_Arrow.click
   end
-
-
 end
-
-  
-
-  

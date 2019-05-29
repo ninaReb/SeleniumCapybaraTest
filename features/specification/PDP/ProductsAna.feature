@@ -3,17 +3,18 @@ Feature: Products
    Feature description Products
    
 
-   Scenario: Searching for a product on Ferguson site
-        Given I am on the Ferguson desktop site
-        When I type ccc on the search field
-        And I click on Enter button
-        Then I should see the results I searched
+#   Scenario: Searching for a product on Ferguson site
+#        Given I am on the Ferguson desktop site
+#        When I type ccc on the search field
+#        And I click on Enter button
+#        Then I should see the results I searched
+
         
  @temp
     Scenario: Verify product details page of a product image and color finish
-        Given I am on logged as T3/T4 on ferguson desktop site
+        Given I am on logged as B2B on ferguson desktop site
 
-        When I go to the Product Details page of the product M6190
+        When I go to the Product Details page of the product 
         Then I should see the Product description section
         And I should see the Product title
         Then I should see the Product code
@@ -55,7 +56,7 @@ Feature: Products
         When I click on Check Other Stores link
         Then I should see the Check Availability modal be opened
         
-        When I click on Check Other Stores link
+        When I click on See Whats Available link
         Then I should see the Check Availability modal be opened
 
         
