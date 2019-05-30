@@ -5,10 +5,9 @@ Feature: Combo Products PDP Validation
 
  @NinaTest
  @ComboSections
-
     Scenario: Verify Sections of PDP
         Given I am on logged on Ferguson desktop site
-        When I go to the Combo Product's Details page of the product 
+        When I go to the Combo Product's Details page
         Then I should see the Combo Product's description section
         And I should see the Combo Product's title
         Then I should see the Combo Product's code

@@ -5,7 +5,7 @@ Given("I am on logged on Ferguson desktop site") do
     sleep 2
   end
   
-  When("I go to the Combo Product's Details page of the product") do
+  When("I go to the Combo Product's Details page") do
     @header_page.findSearch('PF1400TWH')
     @header_page.clickFind_Button
   end
@@ -86,11 +86,5 @@ Given("I am on logged on Ferguson desktop site") do
     expect(page).to have_content(@PdpNina.getBundlePrice)
   end
   
-#   When("I hover over on the Combo Product's image") do
-#     #@PdpNina.getImgContainer.trigger(:mouseover)
-#     #find('body > div.zoomContainer').hover
-  
-#   Then("I should see the Combo Product's image zoomed in a new window") do
-#     expect(page).to have_content(@PdpNina.getZoomedImg)
-#   end
+
   

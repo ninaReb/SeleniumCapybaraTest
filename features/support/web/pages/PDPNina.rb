@@ -28,8 +28,17 @@ class PdpNina
     @Icon_LeadLaw = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[1]/div/div[1]/p[2]/i[3]')
     @Pricing_Options = find('#singleForm > div.total-content > div.total-price > div.js-prices-toggle.price-view-type > div > span > div > div.sim-list')
     @Bundle_Price = find('#js-bundle-builder-form > div.bundle-builder > div.product-row.clearfix > div.total-price')
+    @Add_To_List_Modal = find('#wishListModal > div > div')
+    @Order_Summary = find('expect(page).to have_content(@PdpNina.getEntireCollection)')
   end
 
+  def getOrderSummary
+    @Order_Summary
+  end
+
+  def getListModal
+    @Add_To_List_Modal
+  end
   def getBundlePrice
     @Bundle_Price
   end
@@ -114,7 +123,7 @@ class PdpNina
     @Entire_Collection_View_All_Button = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[4]/div/div[1]/a')
     @Entire_Collection_Right_Arrow = find('#wrapper > main > div > div.row > div.entire-collection.row > div > div.carousel-head > div > a.pager-next')
     @Entire_Collection_Left_Arrow = find('#wrapper > main > div > div.row > div.entire-collection.row > div > div.carousel-head > div > a.pager-prev')
-    @Add_To_Cart_Button = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div[4]/input[9]')
+    @Add_To_Cart_Button = find('#singleForm > div.total-content > div.total-button > input.button.primary.form-control.js-add-to-cart')
     @Print = find('#js-down-pdf')
     @Add_To_Lists_Button = find('#singleForm > div.total-content > div.total-button > input.button.tertiary.form-control.js-pls-select-sku')
     @Add_To_Cart_Button = find('#singleForm > div.total-content > div.total-button > input.button.primary.form-control.js-pls-select-sku')
@@ -123,6 +132,7 @@ class PdpNina
     @First_Image_Thumbnail = find('#js-thumb-img > a.active > img')
     @First_Color = find('#js-pls-select-container > a:nth-child(1) > img')
     @Second_Color = find('#js-pls-select-container > a:nth-child(2) > img')
+    @FPT_Add_To_Cart = find('#js-bundle-builder-form > div.bundle-builder > div.product-row.clearfix > div.total-price > input')
   end
 
   def getPrintBtn
@@ -161,7 +171,12 @@ class PdpNina
 
   #Checkboxes
   def setCheckboxes
-  @Combo_Product_First_Checkbox = find(:xpath, '#js-bundle-builder-form > div.bundle-builder > div.product-select > div:nth-child(1) > p > label')
+  @Combo_Product_First_Checkbox = find( '#js-bundle-builder-form > div.bundle-builder > div.product-select > div:nth-child(1) > p > label')
+  @Active_Box = find('//*[@id="js-bundle-builder-form"]/div[4]/div[2]/div[1]/p/label')
+  end
+
+  def getActiveBox
+    @Active_Box
   end
 
   #Links
@@ -176,13 +191,43 @@ class PdpNina
   end
 
   #Messages
-  @cart_Msg = 'item(s) added to Cart Checkout Now'
+  #@Cart_Msg = find('#singleForm > div.total-content > div.tipmsg')
+
 
  # ----------------------
 
   #Actions
+
+  # def getCartMsg
+  #   @cart_Msg
+  # end
+
+  def goToCart
+    button = find('#wrapper > header > div.header-container.container > div.header-details-user > ul > li.cart.i-cart > a > span')
+    button.click
+  end
+
+  def clickArrowRight
+    arrow = find('#wrapper > main > div > div.row > div.entire-collection.row > div > div.carousel-head > div > a.pager-next')
+    arrow.click
+    sleep 3
+  end
+
+  def clickArrowLeft
+    arrow = find('#wrapper > main > div > div.row > div.entire-collection.row > div > div.carousel-head > div > a.pager-prev')
+    arrow.click
+    sleep 3
+  end
+
+
   def clickAddToCartButton
-    Add_To_Cart_Button.click
+    button = find('#singleForm > div.total-content > div.total-button > input.button.primary.form-control.js-add-to-cart')
+    button.click
+  end
+  def clickFPTAddToCartButton
+    button = find('#js-bundle-builder-form > div.bundle-builder > div.product-row.clearfix > div.total-price > input')
+    button.click
+    sleep 2
   end
 
   def clickViewAllInCollection
@@ -194,23 +239,38 @@ class PdpNina
   end
 
   def clickPrint
-    Print.click
+    button = find('#js-down-pdf')
+    button.click
   end
 
-  def hoverZoomImage
-    Zoom_Image_Container.hover
+  def clickCheckBox
+    box = find( '#js-bundle-builder-form > div.bundle-builder > div.product-select > div:nth-child(1) > p > label')
+    box.click
+    sleep 3
+  end
+
+  def zoom_mouse_image
+    zoom = find(:xpath, '/html/body/div[6]')
+    zoom.hover
+  end
+
+  def getHoverImageModal
+    find('body > div.zoomWindowContainer > div')
   end
 
   def clickAddToMyListsButton
-    Add_To_Lists_Button.click
+    button = find(:xpath, '//*[@id="singleForm"]/div[2]/div[4]/input[10]')
+    button.click
   end
 
   def clickEntireCollectionViewAll
-    Entire_Collection_View_All_Button.click
+    button = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[4]/div/div[1]/a')
+    button.click
   end
 
   def clickExpandSpecifications
-      Expand_Specifications_Arrow.click
+    expand = find('#wrapper > main > div > div.row > div.col-lg-8.col-md-8 > p > a')
+    expand.click
   end
 
   def clickFirstImage
