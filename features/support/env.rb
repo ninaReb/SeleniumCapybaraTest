@@ -4,6 +4,7 @@ require 'capybara/rspec'
 require 'selenium-webdriver'
 #require 'test/unit/assertions'
 #require 'webdrivers/chromedriver'
+require 'webdrivers/chromedriver'
 
 Capybara.configure do |config|
     config.default_driver = :selenium_chrome
@@ -24,3 +25,5 @@ RSpec.configure do |config|
 
 
 
+email = 'akratz@mcfadyen.com'
+password ='Admin1976'
