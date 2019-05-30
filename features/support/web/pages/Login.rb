@@ -1,7 +1,7 @@
 class LoginPage
   include Capybara::DSL
 
-  def Logon(email, password)
+  def logon(email, password)
     fill_in 'hero-login-email', with: email
     fill_in 'hero-login-pwd', with: password
     click_button 'hero-login-submit'
@@ -11,7 +11,7 @@ class LoginPage
     visit 'https://www.ferguson.com/myAccount/myList'
   end
 
-  def Logout
+  def logout
     logout = find('#tour-step1')
     logout.hover
     find(:xpath, '//*[@id="wrapper"]/header/div[4]/div[3]/ul/li[1]/div/nav[1]/ul/li[6]/p/a').click

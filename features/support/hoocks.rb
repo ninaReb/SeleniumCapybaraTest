@@ -9,5 +9,6 @@ Before do
     @pdp_page = PdpPage.new
     @mylist_page = MyListPage.new 
     @pdpAna_page = PdpAnaPage.new
+    @PdpNina = PdpNina.new
 
 end
