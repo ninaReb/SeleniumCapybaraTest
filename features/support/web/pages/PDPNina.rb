@@ -3,6 +3,7 @@ class PdpPageNina
 
   #Sections
   def setSections
+    $zoomed_Img = find('body > div.zoomWindowContainer > div')
     $Description = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[1]/div/div[1]/div[2]')
     $Brand_Logo = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[1]/div/div[1]/p[1]/img')
     $Price = find(:xpath, '//*[@id="singleForm"]/div[2]')
@@ -16,7 +17,7 @@ class PdpPageNina
     $Color_finish = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[1]/div/div[2]/div[1]/div')
     $Zoom_Image_Container = find(:xpath, '/html/body/div[6]')
     $Product_Images = find(:xpath, '//*[@id="js-thumb-img"]')
-    $Product_Code = find(:xpath, '#wrapper > main > div > div.row > div.col-lg-8.col-md-8 > div > div:nth-child(2) > div.product-info > p.pro-id')
+    $Product_Code = find( '#wrapper > main > div > div.row > div.col-lg-8.col-md-8 > div > div:nth-child(2) > div.product-info > p.pro-id')
   end
 
 
@@ -51,6 +52,9 @@ class PdpPageNina
   def setSelects
   $Type_or_Size_Select = find('#js-pls-select-container > span > div > div.sim-head > span.current')
   end
+
+  #Messages
+  cartMsg = 'item(s) added to Cart Checkout Now'
 
  # ----------------------
 
@@ -89,6 +93,14 @@ class PdpPageNina
 
   def clickFirstImage
     First_Image_Thumbnail.click
+  end
+
+  def clickFirstColor
+    First_Color.click
+  end
+
+  def clickSecondColor
+    Second_Color.click
   end
 
   def clickSecondImage 
