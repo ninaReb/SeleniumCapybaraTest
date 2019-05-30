@@ -7,13 +7,13 @@ class LoginPage
     click_button 'hero-login-submit'
   end
 
-  def Goto_MyListPage
+  def goto_MyListPage
     visit 'https://www.ferguson.com/myAccount/myList'
   end
 
   def logout
-    logout = find('#tour-step1')
-    logout.hover
+    logoff = find('#tour-step1')
+    logoff.hover
     find(:xpath, '//*[@id="wrapper"]/header/div[4]/div[3]/ul/li[1]/div/nav[1]/ul/li[6]/p/a').click
   end
 end
