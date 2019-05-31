@@ -10,6 +10,6 @@ When("I try to delete my Lists") do
   
   Then("I should be able to delete my list successfully") do
     expect(page).to have_text('list(s) deleted') 
-    @login_page.Logout
+    @login_page.logout
   end
   

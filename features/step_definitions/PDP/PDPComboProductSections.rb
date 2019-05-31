@@ -6,8 +6,8 @@ Given("I am on logged on Ferguson desktop site") do
   end
   
   When("I go to the Combo Product's Details page") do
-    @header_page.findSearch('PF1400TWH')
-    @header_page.clickFind_Button
+    @header_page.find_search('PF1400TWH')
+    @header_page.click_find_btn
   end
   
   Then("I should see the Combo Product's description section") do

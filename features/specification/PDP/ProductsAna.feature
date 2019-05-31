@@ -11,6 +11,7 @@ Feature: Products
 
         
  @temp
+ @AnaTest
     Scenario: Verify product details page of a product image and color finish
         Given I am on logged as B2B on ferguson desktop site
 

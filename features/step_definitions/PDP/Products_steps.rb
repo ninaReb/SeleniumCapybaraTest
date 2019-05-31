@@ -2,11 +2,11 @@
 
 Given("I am on the Ferguson desktop site") do
   visit "https://ferguson.com"
-  @login_page.Logon('test_123@mailinator.com', 'Admin123')
+  @login_page.logon('test_123@mailinator.com', 'Admin123')
 end
 
 When("I type ccc on the search field") do  
-  @header_page.FindSearch("CCC")
+  @header_page.Find_Search("CCC")
 end
 
 When("I click on Enter button") do
@@ -20,13 +20,13 @@ Then("I should see the results I searched") do
   expect(page).to have_selector('#js_inventory_state', visible: true) 
   expect(page).to have_selector('#js-down-pdf', visible: true)
 
-  @login_page.Logout
+  @login_page.logout
 end
 
 
 # Verify mouse hover on a product image
 Given("I am on the product details page of a product") do
-  @header_page.FindSearch('M6190BL')
+  @header_page.Find_Search('M6190BL')
   @header_page.ClickFind_Button
 end
 
