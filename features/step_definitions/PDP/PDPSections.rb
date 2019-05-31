@@ -174,6 +174,7 @@ end
 When("I go to the Size Product's Details page") do
   @header_page.find_search('DMJLSLA')
   @header_page.click_find_btn
+  @PdpNina.clickSizeProduct
 end
 
 Then("I should see the Size Product's description section") do
@@ -197,11 +198,11 @@ Then("I should see the Size Product's specifications") do
 end
 
 Then("I should see the Size Product's size selection list") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getSizeOptions) 
 end
 
 Then("I should see the Size Product's price options") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getSizePriceOption)
 end
 
 Then("I should see the Size Product's Print button enabled") do
@@ -220,34 +221,34 @@ end
 #Buying Options 
 
 When("I click one of the buying options") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @PdpNina.clickBuyingOptionsLink
 end
 
-Then("A I should see that option's info expand") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I should see that option's info expand") do
+  expect(page).to have_content(@PdpNina.getSizeOptionsExpanded) 
 end
 
 Then("I should see the Size Option's code") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getSizeCode)
 end
 
 Then("I should see the Size Product's Shipping Information") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getSizeShipping)
 end
 
 Then("I should see the Size Product's Quantity") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getSizeQty)
 end
 
 Then("I should see the Size Product's Add to Cart button enabled") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getSizeAddToCartBtn)
 end
 
 Then("I should see the Size Product's Add to My List button enabled") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getSizeAddToListsBtn)
 end
 
 Then("I should see the Size Product's Store Availability information") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getSizeAvailability)
 end
 

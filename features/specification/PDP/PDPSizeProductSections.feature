@@ -27,7 +27,7 @@ Feature: Size Products PDP Validation
         Given I am logged on Ferguson desktop site
         When I go to the Size Product's Details page
         And I click one of the buying options
-        Then A I should see that option's info expand
+        Then I should see that option's info expand
         Then I should see the Size Option's code
         Then I should see the Size Product's Shipping Information
         Then I should see the Size Product's Quantity
