@@ -1,6 +1,6 @@
 #require 'PDPNina'
 
-Given("I am on logged on Ferguson desktop site") do
+Given("I am logged on Ferguson desktop site") do
     @login_page.logon('akratz@mcfadyen.com', 'Admin1976')
     sleep 2
   end
