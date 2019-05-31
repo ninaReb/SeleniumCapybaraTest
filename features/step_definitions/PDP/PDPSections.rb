@@ -84,7 +84,18 @@ end
 
 Then("I should see Combo Product's Bundle Price") do
   expect(page).to have_content(@PdpNina.getBundlePrice)
+
 end
+
+
+Then("I should see the  Combo Product's title") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should see the Combo Product's color finish section") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 
 #Color PDP
 When("I go to the Color Product's Details page") do                                         

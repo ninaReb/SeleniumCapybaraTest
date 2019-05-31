@@ -52,13 +52,6 @@ Feature: Color Products PDP Functional Validation
         When I click on Add To my Lists Button
         Then I should see the Add To My Lists modal
 
-    # @ColorFunctional    
-    # @Size
-    # Scenario: Testing Size Selection
-    #     Given I am logged on Ferguson desktop site
-    #     When I go to the Color Product's Details page  
-    #     When I pick a size option for the product
-    #     Then I should see the product change to the size variant selected
 
     @ColorFunctional    
     @Print
@@ -70,13 +63,13 @@ Feature: Color Products PDP Functional Validation
 
 
     @ColorFunctional
-    @AddToCartCombo
+    @AddToCartColor
     Scenario: Testing Add to Cart Button
         Given I am logged on Ferguson desktop site
         When I go to the Color Product's Details page  
         When I click on the Add to Cart Button
         Then I should see a brief with the Checkout Now link
-        And I should see the product in the Cart Page 
+        And I should see the Color product in the Cart Page 
 
     @ColorFunctional
     @ViewAll

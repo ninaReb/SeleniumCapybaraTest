@@ -1,7 +1,7 @@
 class PdpNina
   include Capybara::DSL
 
-  #################Paths######################
+  #################Paths0######################
   #Sections
   def setSections
     @Size_Options = find('#wrapper > main > div.container > div.row > div:nth-child(5) > div > div > ul')

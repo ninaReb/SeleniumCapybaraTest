@@ -62,7 +62,7 @@ Feature: Size Products PDP Functional Validation
         When I go to the Size Product's Details page  
         When I click on the Add to Cart Button in the size option tab
         Then I should see a brief with the Checkout Now link
-        And I should see the product in the Cart Page 
+        And I should see the Size product in the Cart Page 
 
 
 
