@@ -53,13 +53,13 @@ Feature: Color Products PDP Functional Validation
         Then I should see the Add To My Lists modal
 
 
-    @ColorFunctional    
-    @Print
-    Scenario: Testing Print Button
-        Given I am logged on Ferguson desktop site
-        When I go to the Color Product's Details page  
-        When I click the print button
-        Then I should see the print preview popup
+    # @ColorFunctional    
+    # @Print
+    # Scenario: Testing Print Button
+    #     Given I am logged on Ferguson desktop site
+    #     When I go to the Color Product's Details page  
+    #     When I click the print button
+    #     Then I should see the print preview popup
 
 
     @ColorFunctional

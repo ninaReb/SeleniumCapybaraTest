@@ -25,7 +25,7 @@ class PdpNina
     @Specifications = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[1]/div/div[2]/div[2]')
     @Breadcrumbs = find(:xpath, '//*[@id="wrapper"]/main/div/div[1]')
     @Color_finish = find(:xpath, '//*[@id="wrapper"]/main/div/div[2]/div[1]/div/div[2]/div[1]/div')
-    @Zoom_Image_Container = find(:xpath, '/html/body/div[6]')
+    @Zoom_Image_Container = find('#js-hero-img > a.js-image-box > div > img')
     @Product_Images = find(:xpath, '//*[@id="js-thumb-img"]')
     @Product_Code = find( '#wrapper > main > div > div.row > div.col-lg-8.col-md-8 > div > div:nth-child(2) > div.product-info > p.pro-id')
     @Store_Availability = find('#singleForm > div.total-content > div.available-store > div:nth-child(2) > p:nth-child(1)')
@@ -67,6 +67,7 @@ class PdpNina
     @FPT_Add_To_Cart = find('#js-bundle-builder-form > div.bundle-builder > div.product-row.clearfix > div.total-price > input')
     @Size_Add_To_cart_Button = find('#multi_pdp_addTocart')
     @Size_Add_To_My_Lists_Button = find('#mutipleFormTemp > li.sku-list.open > div.sku-extend > div.se-right > div.button-box.clearfix > input.button.tertiary.form-control.js-add-to-wishlist')
+    @Store_Availability_Modal = find('#checkStores > div > div')
   end
   #Checkboxes
   def setCheckboxes
@@ -78,7 +79,7 @@ class PdpNina
     @Anon_Register_Link = find(:xpath, '//*[@id="singleSku-productTotal"]/div/a[1]')
     @Anon_Login_Link = find(:xpath, '//*[@id="singleSku-productTotal"]/div/a[2]')
     @Size_Availability_Link = find('#mutipleFormTemp > li.sku-list.open > div.sku-extend > div.se-left > div.available-store > div:nth-child(2) > p:nth-child(2) > a')
-    @Size_Shipping_Link = find('#mutipleFormTemp > li.sku-list.open > div.sku-extend > div.se-left > div.available-store > div:nth-child(4) > p:nth-child(2) > a')
+    @Size_Other_Stores = find('#mutipleFormTemp > li.sku-list.open > div.sku-extend > div.se-left > div.available-store > div:nth-child(2) > p:nth-child(2) > a')
     @Buying_Options_Link = find('#mutipleFormTemp > li:nth-child(1) > div.sku-title > div.st-right > span > a')
     @Hide_Options_Link = find('#mutipleFormTemp > li.sku-list.open > div.sku-title > div.st-right > span > a')
     @Size_Product = find('#wrapper > main > div > div > div.col-lg-9.col-md-9 > div > div.search-results-box > ul > li:nth-child(1) > div.sr-item-right.clearfix > div.sir-first-table > div > div.prod-desc > div.prod-name.js-ellipsis.js-ellipsis-end > a > p')
@@ -90,7 +91,9 @@ class PdpNina
 
 
   #################Getters#####################
-
+  def getStoreModal
+    @Store_Availability_Modal
+  end
   def getSizeOptions
     @Size_Options
   end
@@ -240,7 +243,14 @@ class PdpNina
   end
 
   #######################Clicks##########################
-
+  def clickCheckAvailability
+      button = find('#singleForm > div.total-content > div.available-store > div:nth-child(4) > p:nth-child(2) > a')
+      button.click
+  end
+  def clickCheckStores
+    button = find('#singleForm > div.total-content > div.available-store > div:nth-child(2) > p:nth-child(2) > a')
+    button.click
+  end
   def clickSizeProduct
     link = find('#wrapper > main > div > div > div.col-lg-9.col-md-9 > div > div.search-results-box > ul > li:nth-child(1) > div.sr-item-right.clearfix > div.sir-first-table > div > div.prod-desc > div.prod-name.js-ellipsis.js-ellipsis-end > a > p')
     link.click
@@ -249,6 +259,7 @@ class PdpNina
     link = find('#mutipleFormTemp > li.sku-list.open > div.sku-extend > div.se-left > div.available-store > div:nth-child(2) > p:nth-child(2) > a')
     link.click
   end
+  
   def clickSizeShippingLink
     link = find('#mutipleFormTemp > li.sku-list.open > div.sku-extend > div.se-left > div.available-store > div:nth-child(4) > p:nth-child(2) > a')
     link.click
@@ -308,7 +319,7 @@ class PdpNina
     sleep 3
   end
   def zoom_mouse_image
-    zoom = find(:xpath, '/html/body/div[6]')
+    zoom = find('#js-hero-img > a.js-image-box > div > img')
     zoom.hover
   end
   def getHoverImageModal
@@ -330,10 +341,12 @@ class PdpNina
     First_Image_Thumbnail.click
   end
   def clickFirstColor
-    First_Color.click
+    button = find('#js-pls-select-container > a:nth-child(1) > img')
+    button.click
   end
   def clickSecondColor
-    Second_Color.click
+    button = find('#js-pls-select-container > a:nth-child(2) > img')
+    button.click
   end
   def clickSecondImage 
     Second_Image_Thumbnail.click

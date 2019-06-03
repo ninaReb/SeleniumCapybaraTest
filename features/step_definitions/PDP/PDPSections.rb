@@ -89,11 +89,11 @@ end
 
 
 Then("I should see the  Combo Product's title") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getName)
 end
 
 Then("I should see the Combo Product's color finish section") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getColorFinish)
 end
 
 

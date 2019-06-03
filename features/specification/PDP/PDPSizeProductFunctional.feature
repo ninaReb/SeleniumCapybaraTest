@@ -46,13 +46,13 @@ Feature: Size Products PDP Functional Validation
         Then I should see the Add To My Lists modal
 
 
-    @SizeFunctional    
-    @Print
-    Scenario: Testing Print Button
-        Given I am logged on Ferguson desktop site
-        When I go to the Size Product's Details page  
-        When I click the print button
-        Then I should see the print preview popup
+    # @SizeFunctional    
+    # @Print
+    # Scenario: Testing Print Button
+    #     Given I am logged on Ferguson desktop site
+    #     When I go to the Size Product's Details page  
+    #     When I click the print button
+    #     Then I should see the print preview popup
 
 
     @SizeFunctional

@@ -1,13 +1,4 @@
 
-
-When("I pick a size option for the product") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("I should see the product change to the size variant selected") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 When("I hover over the main Image") do
   @PdpNina.zoom_mouse_image
   sleep 3
@@ -83,11 +74,12 @@ When("I click on the Left-side arrow in the Entire collection section") do
 end
   
 When("I click on a color option for the product") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @PdpNina.clickSecondColor
 end
 
 Then("I should see the product change to the color variant selected") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_text("M6190BL")
+  expect(page).to have_text("Matte Black")
 end
 
                                                                                       
@@ -109,27 +101,27 @@ Then("I should see the product in the Cart Page") do
 end  
 
 When("I Click the Check other stores link") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @PdpNina.clickCheckStores
 end
 
 Then("I should see the store modal") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getStoreModal)
 end
 
 When("I Click the See Whats Available link") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @PdpNina.clickCheckAvailability
 end
 
 Then("I should see the availability modal") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getStoreModal)
 end
 
 Then("I should see the Color Product's Specifications section expanded") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getSpecs)
 end
 
 When("I click the print button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @PdpNina.clickPrint
 end
 
 Then("I should see the print preview popup") do
@@ -138,29 +130,51 @@ end
 
 
 When("I click on a Size option for the product") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @PdpNina.clickBuyingOptionsLink
 end
 
 Then("I should see the product change to the Size variant selected") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_text("DMJLSLA10")
 end
 
 When("I Click the Check other stores link in the size option tab") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @PdpNina.clickBuyingOptionsLink
+  @PdpNina.clickSizeAvailabilitylink
 end
 
 When("I Click the See Whats Available link in the size option tab") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @PdpNina.clickBuyingOptionsLink
+  @PdpNina.clickSizeShippingLink
 end
 
 Then("I should see the Size Product's Specifications section expanded") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content(@PdpNina.getSizeOptionsExpanded) 
 end
 
 When("I click on Add To my Lists Button in the size option tab") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @PdpNina.clickBuyingOptionsLink
+  @PdpNina.clickSizeListBtn
 end
 
 When("I click on the Add to Cart Button in the size option tab") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @PdpNina.clickBuyingOptionsLink
+  @PdpNina.clickSizeCartBtn
 end
+
+Then("I should see the Color product in the Cart Page") do
+  @PdpNina.goToCart 
+  expect(page).to have_text("SHOPPING CART")  
+  expect(page).to have_content(@PdpNina.getOrderSummary)
+  expect(page).to have_text("p6190") 
+  
+end
+
+Then("I should see the Size product in the Cart Page") do
+  @PdpNina.goToCart 
+  expect(page).to have_text("SHOPPING CART")  
+  expect(page).to have_content(@PdpNina.getOrderSummary)
+  expect(page).to have_text("DMJLSLA") 
+  DMJLSLA
+end
+
+

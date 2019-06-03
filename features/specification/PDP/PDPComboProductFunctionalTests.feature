@@ -44,29 +44,21 @@ Feature: Combo Products PDP Functional Validation
         When I click on Add To my Lists Button
         Then I should see the Add To My Lists modal
 
-    @ComboFunctional
-    @Color
-    Scenario: Testing Color Selection
-        Given I am logged on Ferguson desktop site
-        When I go to the Combo Product's Details page  
-        When I click on a color option for the product
-        Then I should see the product change to the color variant selected
+    # @ComboFunctional
+    # @Color
+    # Scenario: Testing Color Selection
+    #     Given I am logged on Ferguson desktop site
+    #     When I go to the Combo Product's Details page  
+    #     When I click on a color option for the product
+    #     Then I should see the product change to the color variant selected
 
-    @ComboFunctional    
-    @Size
-    Scenario: Testing Size Selection
-        Given I am logged on Ferguson desktop site
-        When I go to the Combo Product's Details page  
-        When I pick a size option for the product
-        Then I should see the product change to the size variant selected
-
-    @ComboFunctional    
-    @Print
-    Scenario: Testing Print Button
-        Given I am logged on Ferguson desktop site
-        When I go to the Combo Product's Details page  
-        When I click the print button
-        Then I should see the print preview popup
+    # @ComboFunctional    
+    # @Print
+    # Scenario: Testing Print Button
+    #     Given I am logged on Ferguson desktop site
+    #     When I go to the Combo Product's Details page  
+    #     When I click the print button
+    #     Then I should see the print preview popup
 
 
     @ComboFunctional
