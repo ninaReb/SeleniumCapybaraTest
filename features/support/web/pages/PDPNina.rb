@@ -349,7 +349,8 @@ class PdpNina
     button.click
   end
   def clickSecondImage 
-    Second_Image_Thumbnail.click
+    button = find('#js-thumb-img > a:nth-child(2) > img')
+    button.click
   end
   def clickEntireCollectionRightArrow
     Entire_Collection_Right_Arrow.click

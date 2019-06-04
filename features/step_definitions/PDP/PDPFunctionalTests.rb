@@ -180,7 +180,7 @@ Then("I should see the Color product in the Cart Page") do
   @PdpNina.goToCart 
   expect(page).to have_text("SHOPPING CART")  
   expect(page).to have_content(@PdpNina.getOrderSummary)
-  expect(page).to have_text("p6190") 
+  expect(page).to have_text("P6190") 
 end
 
 Then("I should see the Size product in the Cart Page") do
@@ -189,5 +189,17 @@ Then("I should see the Size product in the Cart Page") do
   expect(page).to have_content(@PdpNina.getOrderSummary)
   expect(page).to have_text("DMJLSLA") 
 end
+
+When("I click on the second image") do
+  @PdpNina.clickSecondImage
+  sleep 3
+  @PdpNina.zoom_mouse_image
+end
+
+Then("I should see the second image show up in the zoom container") do
+  @PdpNina.zoom_mouse_image
+  expect(page).to have_content(@PdpNina.getZoomedImg)
+end
+
 
 

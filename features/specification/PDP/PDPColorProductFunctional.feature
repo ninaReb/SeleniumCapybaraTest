@@ -52,16 +52,6 @@ Feature: Color Products PDP Functional Validation
         When I click on Add To my Lists Button
         Then I should see the Add To My Lists modal
 
-
-    # @ColorFunctional    
-    # @Print
-    # Scenario: Testing Print Button
-    #     Given I am logged on Ferguson desktop site
-    #     When I go to the Color Product's Details page  
-    #     When I click the print button
-    #     Then I should see the print preview popup
-
-
     @ColorFunctional
     @AddToCartColor
     Scenario: Testing Add to Cart Button
@@ -113,4 +103,13 @@ Feature: Color Products PDP Functional Validation
         When I go to the Color Product's Details page  
         When I click on the Left-side arrow in the Entire collection section
         Then I should see the products shift
+
+    @ColorFunctional
+    @Imgs
+    Scenario: Testing Imgs selection
+        Given I am logged on Ferguson desktop site
+        When I go to the Color Product's Details page  
+        When I click on the second image
+        Then I should see the second image show up in the zoom container
+
 
