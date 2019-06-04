@@ -345,7 +345,7 @@ class PdpNina
     button.click
   end
   def clickSecondColor
-    button = find('#js-pls-select-container > a:nth-child(2) > img')
+    button = find('#js-pls-select-container > a:nth-child(3) > img')
     button.click
   end
   def clickSecondImage 

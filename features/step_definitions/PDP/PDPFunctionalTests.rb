@@ -1,15 +1,16 @@
 
 When("I hover over the main Image") do
   @PdpNina.zoom_mouse_image
-  sleep 3
 end
 
 Then("I should see the zoomed image pop up") do
+  @PdpNina.zoom_mouse_image
   expect(page).to have_content(@PdpNina.getZoomedImg)
 end
 
 When("I Click the blue arrow in the Specifications section") do
-  @PdpNina.clickExpandSpecifications
+  @PdpNina.clickExpandSpecifications 
+  sleep 2
 end
 
 Then("I should see the Combo Product's Specifications section expanded") do
@@ -27,6 +28,7 @@ end
 
 When("I click on the View All link") do
   @PdpNina.clickEntireCollectionViewAll
+  sleep 2
 end
 
 Then("I should see the collection page") do
@@ -35,10 +37,12 @@ end
 
 When("I click on the first Checkbox on the Frequently Purchased Together section") do
   @PdpNina.clickCheckBox
+  sleep 1
 end
 
 When("I click the checkbox again") do
   @PdpNina.clickCheckBox
+  sleep 1
 end
 
 Then("I should see the all checkboxes active") do
@@ -47,6 +51,7 @@ end
 
 When("I click on the Add to Cart button in the Frequently Purchased Together section") do
   @PdpNina.clickFPTAddToCartButton
+  @PdpNina.goToCart 
 end
 
 Then("I should see the cart page") do
@@ -63,6 +68,7 @@ end
 
 When("I click on the Right-side arrow in the Entire collection section") do
   @PdpNina.clickArrowRight
+  sleep 1
 end
 
 Then("I should see the products shift") do
@@ -71,10 +77,12 @@ end
 
 When("I click on the Left-side arrow in the Entire collection section") do
   @PdpNina.clickArrowLeft
+  sleep 1
 end
   
 When("I click on a color option for the product") do
   @PdpNina.clickSecondColor
+  sleep 2
 end
 
 Then("I should see the product change to the color variant selected") do
@@ -89,7 +97,7 @@ When("I click on the Add to Cart Button") do
 end                                                                                  
                                                                                     
 Then("I should see a brief with the Checkout Now link") do 
-  expect(page).to have_text("1 item(s) added to Cart Checkout Now")
+  expect(page).to have_text("item(s) added to Cart Checkout Now")
   expect(page).to have_link("Checkout Now", :href => "https://www.ferguson.com/shoppingCart")
 end                  
 
@@ -102,6 +110,7 @@ end
 
 When("I Click the Check other stores link") do
   @PdpNina.clickCheckStores
+  sleep 3
 end
 
 Then("I should see the store modal") do
@@ -110,6 +119,7 @@ end
 
 When("I Click the See Whats Available link") do
   @PdpNina.clickCheckAvailability
+  sleep 3
 end
 
 Then("I should see the availability modal") do
@@ -131,6 +141,7 @@ end
 
 When("I click on a Size option for the product") do
   @PdpNina.clickBuyingOptionsLink
+  sleep 2
 end
 
 Then("I should see the product change to the Size variant selected") do
@@ -140,11 +151,13 @@ end
 When("I Click the Check other stores link in the size option tab") do
   @PdpNina.clickBuyingOptionsLink
   @PdpNina.clickSizeAvailabilitylink
+  sleep 2
 end
 
 When("I Click the See Whats Available link in the size option tab") do
   @PdpNina.clickBuyingOptionsLink
   @PdpNina.clickSizeShippingLink
+  sleep 2
 end
 
 Then("I should see the Size Product's Specifications section expanded") do
@@ -154,11 +167,13 @@ end
 When("I click on Add To my Lists Button in the size option tab") do
   @PdpNina.clickBuyingOptionsLink
   @PdpNina.clickSizeListBtn
+  sleep 2
 end
 
 When("I click on the Add to Cart Button in the size option tab") do
   @PdpNina.clickBuyingOptionsLink
   @PdpNina.clickSizeCartBtn
+  sleep 2
 end
 
 Then("I should see the Color product in the Cart Page") do
@@ -166,7 +181,6 @@ Then("I should see the Color product in the Cart Page") do
   expect(page).to have_text("SHOPPING CART")  
   expect(page).to have_content(@PdpNina.getOrderSummary)
   expect(page).to have_text("p6190") 
-  
 end
 
 Then("I should see the Size product in the Cart Page") do
@@ -174,7 +188,6 @@ Then("I should see the Size product in the Cart Page") do
   expect(page).to have_text("SHOPPING CART")  
   expect(page).to have_content(@PdpNina.getOrderSummary)
   expect(page).to have_text("DMJLSLA") 
-  DMJLSLA
 end
 
 
