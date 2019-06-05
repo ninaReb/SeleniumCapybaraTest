@@ -10,7 +10,7 @@ Feature: Products
 #        Then I should see the results I searched
 
         
- @temp
+ 
  @AnaTest
     Scenario: Verify product details page of a product image and color finish
         Given I am on logged as B2B on ferguson desktop site
